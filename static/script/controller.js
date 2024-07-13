@@ -1,4 +1,4 @@
-import { voiceRecord, Actions } from "../library/webapi.js";
+import { voiceRecord, Actions } from "https://cdn.jsdelivr.net/gh/UmarBelloKanwa/webapi@main/library.js";
 
 export default class Controller extends voiceRecord {
     constructor(model, view) {
