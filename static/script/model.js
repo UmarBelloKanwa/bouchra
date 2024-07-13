@@ -82,9 +82,11 @@ export default class Model extends Conversations {
 
         try {
             const response = await fetch(
-                'https://www.bouchra.onrender.com/chat',
+                '/chat',
                 { 
                     method: 'POST',
+                    mode : 'same-origin',
+                    credentials: 'same-origin',
                     body: formData
                 }
             );  
