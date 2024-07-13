@@ -95,7 +95,7 @@ export default class Model extends Conversations {
             result = result.message;
         } catch (error) {
             result = this.translations.notSentMessage[0];
-            this.ctrl.actions('notify', result);
+            this.ctrl.actions.actions('notify', result);
             console.error(error);
         }
     
