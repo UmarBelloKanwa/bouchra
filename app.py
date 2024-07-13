@@ -101,7 +101,3 @@ async def translate(text: str, from_lang: str, to_lang: str) -> str:
             translated_text.append(data['responseData']['translatedText'])
 
     return ''.join(translated_text)
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
