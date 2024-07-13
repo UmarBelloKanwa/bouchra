@@ -144,7 +144,7 @@ export default class View {
                         return icon;
                     }
                     icon.addEventListener('click', () => {
-                        this.actions(
+                        this.actions.actions(
                             actions,
                             icon.parentElement.parentElement.innerText
                         )
