@@ -1,4 +1,4 @@
-﻿fastapi==0.109.0
+﻿fastapi[all]
 uvicorn==0.25.0
 gunicorn==20.1.0
 jinja2==3.1.3
