@@ -5,9 +5,7 @@ export default class Controller extends voiceRecord {
         super();
         this.model = new model(this);
         this.view = new view();
-        const acts = new Actions();
-        this.actions = acts.actions;
-        this.speak = acts.speak;
+        this.actions = new Actions();
         this.view.handleEvents(this);
     } 
     selectedLanguage(lang) {
