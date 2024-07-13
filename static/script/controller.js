@@ -13,15 +13,10 @@ export default class Controller extends voiceRecord {
         this.toLanguage();
     }
     toLanguage() {
-        let key = this.model.getSetting();
-        key = key['language'];
-        if (key == 'العربية') key = 0;
-        if (key == 'Français') key = 1;
-        if (key == 'English') key = 2;
         this.view.toLanguage.bind({
             ...this.view, 
             ...this.model.translations
-        }, key)();
+        }, Number(this.model.getLanguageKey()))();
     }
     viewMode(mode) {
         let styles = this.model.darkModeStyles;
