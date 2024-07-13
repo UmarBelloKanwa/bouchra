@@ -106,7 +106,8 @@ export default class Model extends Conversations {
     
         this.add({
             'user': message,
-            'bouchra': result
+            'bouchra': result,
+            'language' : await this.getSetting()['language']
         });
         return result;
     }
