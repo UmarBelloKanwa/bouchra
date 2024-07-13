@@ -87,6 +87,9 @@ export default class Model extends Conversations {
                     method: 'POST',
                     mode : 'same-origin',
                     credentials: 'same-origin',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
                     body: formData
                 }
             );  
