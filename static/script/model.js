@@ -94,7 +94,7 @@ export default class Model extends Conversations {
             var result = await response.json();
             result = result.message;
         } catch (error) {
-            result = this.translations.notSentMessage[0];
+            result = this.translations.notSentMessage[Number(this.getLanguageKey())];
             this.ctrl.actions.actions('notify', result);
             console.error(error);
         }
@@ -107,6 +107,14 @@ export default class Model extends Conversations {
     }
     add(data) {
         this.operate('add', this.storeName, data).then(() => void this.loadChat());  
+    }
+    getLanguageKey() {
+        let key = this.getSetting();
+        key = key['language'];
+        if (key == 'العربية') key = 0;
+        if (key == 'Français') key = 1;
+        if (key == 'English') key = 2;
+        return key;
     }
     loadChat() {
         this.operate('display', this.storeName).then(result => {
