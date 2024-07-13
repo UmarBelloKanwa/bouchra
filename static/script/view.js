@@ -131,7 +131,7 @@ export default class View {
         this.form.firstElementChild.value = '';
         this.form.firstElementChild.style.height = '25px';
     }
-    receivedMessage(msg) {
+    receivedMessage(msg, pos) {
         const md = window.markdownit();
         const p = document.createElement('p')
             , span = document.createElement('span')
@@ -152,7 +152,8 @@ export default class View {
                     return icon;
                 }
         );
-        span.append(...icons), p.innerHTML = md.render(msg), p.appendChild(span);
+        span.append(...icons), p.innerHTML = md.render(msg);
+        p.appendChild(span); p.style.textAlign = pos;
         this.view.messagesContainer.appendChild(p);
     }
     searchChatHistory(input) {
