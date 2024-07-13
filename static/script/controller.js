@@ -127,7 +127,7 @@ export default class Controller extends voiceRecord {
                         lang = 'English';
                         break;
                 }
-                this.speak('play', text, lang, 'Female');
+                this.actions.speak('play', text, lang, 'Female');
                 this.view.speech = 'end';
                 break;
             default:
