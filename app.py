@@ -1,5 +1,4 @@
 from fastapi import FastAPI, Request, UploadFile, File, Form
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
@@ -19,14 +18,6 @@ genai.configure(api_key= GOOGLE_AI_API_KEY)
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 app.mount('/static', StaticFiles(directory='static'), name='static')
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["https://www.bouchra.onrender.com"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 templates = Jinja2Templates(directory='templates')
 
