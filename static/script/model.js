@@ -1,4 +1,4 @@
-import { Storage } from "../library/webapi.js";
+import { Storage } from "https://cdn.jsdelivr.net/gh/UmarBelloKanwa/webapi@main/library.js";
 new Storage('Conversations');
 
 export default class Model extends Conversations {
