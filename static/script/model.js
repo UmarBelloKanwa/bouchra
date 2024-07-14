@@ -9,31 +9,34 @@ export default class Model extends Conversations {
         this.loadChat();
         this.setting = this.getSetting();
         this.translations = {
-            bouchra: ['بشرى', 'Bouchra', 'Bouchra'],
-            chooseLanguage: ['لغة الدردشة', 'Langue de chat', 'Chat Language'],
-            chatLanguages: ['العربية', 'Français', 'English'],
-            darkMode: ['الوضع الداكن', 'Mode sombre', 'Dark Mode'],
-            chatHistory: ['سجل الدردشة', 'Historique du chat', 'Chat History'],
-            clearMyData: ['مسح بياناتي', 'Effacer mes données', 'Clear My Data'],
-            seeAbout: ['رؤية حول التطبيق', 'Voir À propos de l\'application', 'See About'],
+            bouchra: ['بشرى', 'Bouchra', 'Bouchra', 'Bouchra'],
+            chooseLanguage: ['لغة الدردشة', 'Langue de chat', 'Chat Language', 'Yaren hira'],
+            chatLanguages: ['العربية', 'Français', 'English', 'Hausa'],
+            darkMode: ['الوضع الداكن', 'Mode sombre', 'Dark Mode', 'Yanayin Duhu'],
+            chatHistory: ['سجل الدردشة', 'Historique du chat', 'Chat History', 'Tarihin Taɗi'],
+            clearMyData: ['مسح بياناتي', 'Effacer mes données', 'Clear My Data', 'Goge Bayanai Na'],
+            seeAbout: ['رؤية حول التطبيق', 'Voir À propos de l\'application', 'See About', 'Duba Game da'],
             about: [
                 "هذا هو برنامج الدردشة الآلي الذي تم إنشاؤه لصديقتي الجميلة (بشرى) كهدية. احبك كثيرا يا حبي. شكراً جزيلاً",
                 "Il s'agit d'un chatbot créé pour ma charmante amie (Bouchra) en cadeau. Je t'aime beaucoup mon amour. Merci beaucoup",
-                "This is a chatbot created for my lovely friend (Bouchra) as a gift. I love you so much my dear. Thank you very much"
+                "This is a chatbot created for my lovely friend (Bouchra) as a gift. I love you so much my dear. Thank you very much",
+                "Wannan shine chatbot da aka ƙirƙira don kyakkyawar abokiyata (Bouchra) a matsayin kyauta. Ina son ku sosai ƙaunataccena. Na gode sosai"
             ],
-            writeQuestion: ['اكتب سؤالك هنا', 'Écrivez votre question ici', 'Write your question here'],
+            writeQuestion: ['اكتب سؤالك هنا', 'Écrivez votre question ici', 'Write your question here', 'Rubuta tambayarka anan'],
             introText: [
                 'مرحبًا بك في الدردشة، دائمًا متاحة للإجابة على أسئلتك',
                 'Bienvenue sur Bouchra chatbot, toujours gratuit et disponible pour répondre à vos questions',
-                'Welcome to Bouchra chatbot, always available to answer your questions'
+                'Welcome to Bouchra chatbot, always available to answer your questions',
+                'Barka da zuwa chatbot na Bouchra, koyaushe ana samunshi don amsa tambayoyinku'
             ],
             notSentMessage: [
-                'لم يتم استلام رسالتك، يرجى المحاولة مرة أخرى', 
-                'Votre message n\'est pas reçu, veuillez réessayer', 
-                'Your message was not received, please try again'
+                'لم يتم استلام رسالتك، يرجى المحاولة مرة أخرى',
+                'Votre message n\'est pas reçu, veuillez réessayer',
+                'Your message was not received, please try again',
+                'Sakon ku ba a karɓa ba, don Allah a sake gwadawa'
             ],
-            searchHistory: ['البحث في السجل حسب التاريخ...', 'Rechercher dans l\'historique par date...', 'Search history by date...']
-        };        
+            searchHistory: ['البحث في السجل حسب التاريخ...', 'Rechercher dans l\'historique par date...', 'Search history by date...', 'Bincika tarihin ta kwanan wata...']
+        };          
         this.darkModeStyles = `
         html, body, header, nav div, article img, header h1, article h1, section, form h5, form,
         [title=alert-box], [title=alert-box] h1, aside, aside div div
@@ -120,6 +123,7 @@ export default class Model extends Conversations {
         if (key == 'العربية') key = 0;
         if (key == 'Français') key = 1;
         if (key == 'English') key = 2;
+        if (key == 'Hausa') key = 3;
         return key;
     }
     loadChat() {
