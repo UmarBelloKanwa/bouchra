@@ -145,7 +145,7 @@ export default class Controller extends voiceRecord {
         this.model.loadChat();
     }
     clearAllData() {
-        const q = this.model.translations.clearData;
+        let q = this.model.translations.clearData;
         q = q[this.model.getLanguageKey()];
         if (confirm(q)) {
             this.model.deleteDatabase(this.model.dbName);
