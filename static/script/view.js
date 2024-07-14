@@ -48,7 +48,6 @@ export default class View {
                 this.form.firstElementChild.style.cssText += 'text-align:right; padding: 5px 20px 5px 5px;';
                 this.heads.forEach(el => el.style.fontSize = 'x-large');
                 this.nav.style.fontSize = '20px';
-                this.messagesContainer.style.textAlignLast = 'right';
                 this.form.lastElementChild.style.fontWeight = 'bold';
                 break;
             case Number(1):
@@ -56,7 +55,6 @@ export default class View {
                 this.form.firstElementChild.style.cssText += 'text-align:left; padding: 5px 5px 5px 20px;';
                 this.heads.forEach(el => el.style.fontSize = '23px');
                 this.nav.style.fontSize = '15px';
-                this.messagesContainer.style.textAlignLast = 'left';
                 this.form.lastElementChild.style.fontWeight = '500';
                 break;
         }
@@ -123,9 +121,10 @@ export default class View {
             });
         }
     }
-    sendMessage(message) {
+    sendMessage(message, lang) {
         const div = document.createElement('div');
         div.textContent = message;
+        div.style.textAlign = lang == 'العربية' ? 'right' : 'left;
         this.messagesContainer.appendChild(div);
         this.form.firstElementChild.value = '';
         this.form.firstElementChild.style.height = '25px';
@@ -307,7 +306,7 @@ export default class View {
     savedMessages(ctrl, messages) {
         this.messagesContainer.innerHTML = '';
         messages.forEach(message => {
-            typeof message['user'] ==  'string' ? this.sendMessage(message['user']) : this.sendVoiceMessage(message['user']);
+            typeof message['user'] ==  'string' ? this.sendMessage(message['user'], message.language) : this.sendVoiceMessage(message['user']);
             this.receivedMessage.call(ctrl, message['bouchra'], message.language);
         });
     }
