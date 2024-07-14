@@ -41,9 +41,11 @@ export default class Model extends Conversations {
         this.darkModeStyles = `
         html, body, header, nav div, article img, header h1, article h1, section, form h5, form,
         [title=alert-box], [title=alert-box] h1, aside, aside div div
-        { background-image:var(--dark_mode);
-          color:white; 
+        { color:white; 
           text-shadow:none;}
+        body, html, form
+        { background-image:var(--dark_mode);
+          background-size: cover;}
         aside div div
         { background-image:none;
           background-color:transparent;}
