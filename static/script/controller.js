@@ -118,11 +118,9 @@ export default class Controller extends voiceRecord {
                     case 'Français':
                         lang = 'French';
                         break;
-                    case 'English':
-                        lang = 'EN';
-                        break;
                     case 'Hausa' :
-                        lang = 'HA';
+                    case 'English':
+                        lang = 'US English';
                         break;
                 }
                 this.actions.speak('play', text, lang, 'Female');
