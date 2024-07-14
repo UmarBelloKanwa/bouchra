@@ -103,11 +103,12 @@ export default class Controller extends voiceRecord {
             this.view.receivedMessage.call(this, await this.model.getMessage(message));
         }
     }
-    speakText(lang, text) {
-        switch(this.view.speech) {
+    speakText(lang, icon) {
+        const text = icon.parentElement.parentElement.innerText;
+        switch(icon.alt) {
             case 'pause':
                 this.actions.speak('resume');
-                this.view.speech = 'default';
+                icon.alt = 'default';
                 break;
             case 'default':
                 switch(lang) {
@@ -118,15 +119,15 @@ export default class Controller extends voiceRecord {
                         lang = 'French';
                         break;
                     case 'English':
-                        lang = 'English';
+                        lang = 'EN';
                         break;
                 }
                 this.actions.speak('play', text, lang, 'Female');
-                this.view.speech = 'end';
+                icon.alt = 'end';
                 break;
             default:
                 this.actions.speak('pause');
-                this.view.speech = 'pause';
+                icon.alt = 'pause';
                 break;
         }
     }    
