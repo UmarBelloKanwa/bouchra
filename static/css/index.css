@@ -256,7 +256,7 @@ aside
   box-shadow:0vw 0vw 4vw 2vw rgba(255, 255, 255, .5);
   height: 70vh;
   border: 1px solid rgba(255, 255, 255, .5);
-  width: 60%;
+  width: 80%;
   padding:.7em 1em;
   border-radius: 1.5em;}
 aside > img
@@ -283,6 +283,7 @@ aside input
 aside input::placeholder, aside input
 { color:var(--txt);
   font-family:Arial, Helvetica, sans-serif;
+  text-align:center;
   font-weight: 500;
   font-size: large;}
 aside > div
