@@ -49,15 +49,10 @@ export default class Model extends Conversations {
         aside div div
         { background-image:none;
           background-color:transparent;}
-        aside div p { text-shadow:none; }
-        aside input, aside input::placeholder
-        { color:white;
-          background-color:transparent;}
         section, header, nav > img:first-child, nav div, article img, article h1, form h5, form,
         [title=alert-box], [title=alert-box] h1, aside div
         { border:1px solid rgba(255, 255, 255, .5); }
-        nav > img:first-child { background-color: rgba(150, 55, 5, 1);}
-        [title=alert-box] span { text-shadow:none;}`;
+        nav > img:first-child { background-color: rgba(150, 55, 5, 1);}`;
     }
     setSetting(data) {
         this.setting = {
