@@ -14,7 +14,6 @@ export default class View {
         this.canvasCtx = this.canvas.getContext('2d');
         this.chatHistoriesContainer = document.getElementsByTagName('aside')[0];
         this.searchInput = this.chatHistoriesContainer.children[1];
-        this.speech = 'default';
     }
     toLanguage(key) {
         [ 
@@ -141,7 +140,8 @@ export default class View {
                     const icon = document.createElement('img'); icon.src = '/static/img/' + src; 
                     const actions = ['copy', 'download', 'share', 'speech'][index];
                     if (actions == 'speech') {
-                        icon.addEventListener('click', () => this.speakText(lang, icon.parentElement.parentElement.innerText));
+                        icon.alt = 'default';
+                        icon.addEventListener('click', (e) => this.speakText(lang, icon));
                         return icon;
                     }
                     icon.addEventListener('click', () => {
