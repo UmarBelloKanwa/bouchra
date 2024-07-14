@@ -36,6 +36,9 @@ async def conversation(
         text = await speech_to_text(audio_bytes)
     else:
         text = value
+      
+    if lang == 'Hausa':
+         response_text = await translate(response_text, 'HA', 'EN')
 
     response = model.generate_content(
         contents=[
