@@ -38,7 +38,7 @@ async def conversation(
         text = value
       
     if lang == 'Hausa':
-         response_text = await translate(response_text, 'HA', 'EN')
+         response_text = await translate(text, 'HA', 'EN')
 
     response = model.generate_content(
         contents=[
