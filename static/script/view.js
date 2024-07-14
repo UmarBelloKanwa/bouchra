@@ -126,7 +126,7 @@ export default class View {
     sendMessage(message, lang) {
         const div = document.createElement('div');
         div.textContent = message;
-        div.style.textAlign = lang == 'العربية' ? 'right' : 'left;
+        div.style.textAlign = lang == 'العربية' ? 'right' : 'left';
         this.messagesContainer.appendChild(div);
         this.form.firstElementChild.value = '';
         this.form.firstElementChild.style.height = '25px';
