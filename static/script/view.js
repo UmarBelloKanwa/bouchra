@@ -35,6 +35,7 @@ export default class View {
                     currentLanguge,
                     languages[0],
                     languages[1],
+                    languages[2],
                     this.chooseLanguage[key],
                     this.darkMode[key],
                     this.chatHistory[key],
@@ -52,6 +53,7 @@ export default class View {
                 break;
             case Number(1):
             case Number(2):
+            case Number(3):
                 this.form.firstElementChild.style.cssText += 'text-align:left; padding: 5px 5px 5px 20px;';
                 this.heads.forEach(el => el.style.fontSize = '23px');
                 this.nav.style.fontSize = '15px';
