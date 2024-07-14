@@ -106,7 +106,7 @@ export default class Controller extends voiceRecord {
     speakText(text) {
         switch(this.view.speech) {
             case 'pause':
-                this.speak('resume');
+                this.actions.speak('resume');
                 this.view.speech = 'default';
                 break;
             case 'default':
@@ -126,7 +126,7 @@ export default class Controller extends voiceRecord {
                 this.view.speech = 'end';
                 break;
             default:
-                this.speak('pause');
+                this.actions.speak('pause');
                 this.view.speech = 'pause';
                 break;
         }
