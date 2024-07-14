@@ -103,14 +103,13 @@ export default class Controller extends voiceRecord {
             this.view.receivedMessage.call(this, await this.model.getMessage(message));
         }
     }
-    speakText(text) {
+    speakText(lang, text) {
         switch(this.view.speech) {
             case 'pause':
                 this.actions.speak('resume');
                 this.view.speech = 'default';
                 break;
             case 'default':
-                let lang = this.model.getSetting()['language'];
                 switch(lang) {
                     case 'العربية':
                         lang = 'Arabic';
