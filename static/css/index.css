@@ -29,10 +29,9 @@ html, body
 html, body, header, nav div, 
 article img, article h1, section, form, aside, aside > div div,
 [title=alert-box], [title=alert-box] h1
-{ box-shadow:1vw 1.5vw 3.5vw 0vw rgb(3, 3, 46);}
-body, html, form, aside > div div
-{  background: var(--theme_mode) no-repeat center;
-   background-size: cover;}
+{ background: var(--theme_mode) no-repeat center;
+  background-size: cover;
+  box-shadow:1vw 1.5vw 3.5vw 0vw rgb(3, 3, 46);}
 header
 { position: absolute;
   right: 0;
@@ -394,6 +393,5 @@ form h5
     { width: 65%;
       grid-template-columns: 90% auto auto;
       border-radius: 1.5em 1.5em 0 0;}
-    [title=alert-box] { width: 25%;}
-    
+    [title=alert-box] { width: 25%;}   
 }
