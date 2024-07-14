@@ -53,6 +53,8 @@ async def conversation(
         response_text = await translate(response_text, 'EN', 'AR')
     elif lang ==  'Français':
         response_text = await translate(response_text, 'EN', 'FR')
+    elif lang == 'Hausa':
+         response_text = await translate(response_text, 'EN', 'HA')
 
     return {'message': response_text}
 
