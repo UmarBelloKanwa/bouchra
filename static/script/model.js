@@ -35,7 +35,7 @@ export default class Model extends Conversations {
                 'Your message was not received, please try again',
                 'Sakon ku ba a karɓa ba, don Allah a sake gwadawa'
             ],
-            searchHistory: ['البحث في السجل حسب التاريخ', 'Rechercher dans l\'historique par date...', 'Search history by date', 'Bincika tarihin ta kwanan wata'],
+            searchHistory: ['البحث في السجل حسب التاريخ', 'Rechercher dans l\'historique par date', 'Search history by date', 'Bincika tarihin ta kwanan wata'],
             clearData : ['هل أنت متأكد أنك تريد مسح بياناتك؟', 'Etes-vous sûr de vouloir effacer vos données ?', 'Are you sure you want to clear your data ?', 'Shin kun tabbata kuna son share bayanan ku ?']
         };          
         this.darkModeStyles = `
