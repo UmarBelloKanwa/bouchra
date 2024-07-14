@@ -131,7 +131,8 @@ export default class View {
         this.form.firstElementChild.value = '';
         this.form.firstElementChild.style.height = '25px';
     }
-    receivedMessage(msg, pos) {
+    receivedMessage(msg, lang) {
+        const pos = lang == 'العربية' ? 'right' : 'left';
         const md = window.markdownit();
         const p = document.createElement('p')
             , span = document.createElement('span')
@@ -140,7 +141,7 @@ export default class View {
                     const icon = document.createElement('img'); icon.src = '/static/img/' + src; 
                     const actions = ['copy', 'download', 'share', 'speech'][index];
                     if (actions == 'speech') {
-                        icon.addEventListener('click', () => this.speakText(icon.parentElement.parentElement.innerText));
+                        icon.addEventListener('click', () => this.speakText(lang, icon.parentElement.parentElement.innerText));
                         return icon;
                     }
                     icon.addEventListener('click', () => {
@@ -307,7 +308,7 @@ export default class View {
         this.messagesContainer.innerHTML = '';
         messages.forEach(message => {
             typeof message['user'] ==  'string' ? this.sendMessage(message['user']) : this.sendVoiceMessage(message['user']);
-            this.receivedMessage.call(ctrl, message['bouchra']);
+            this.receivedMessage.call(ctrl, message['bouchra'], message.language);
         });
     }
     handleEvents(ctrl) {
