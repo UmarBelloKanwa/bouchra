@@ -43,6 +43,7 @@ export default class View {
                     this.seeAbout[key]
                 ][index];
             }
+            index == 0 && child.selected;
         );
         switch (key) {
             case Number(0):
