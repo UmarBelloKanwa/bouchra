@@ -42,8 +42,8 @@ export default class View {
                     this.clearMyData[key],
                     this.seeAbout[key]
                 ][index];
+                child.selected = index == 0 ? true : false;
             }
-            child.selected = index == 0 ? true : false;
         );
         switch (key) {
             case Number(0):
