@@ -2,6 +2,8 @@
 
 # Chatbot Application README
 
+https://bouchra.onrender.com/
+
 ## Introduction
 This project is a multilingual chatbot application that allows users to communicate using text or voice messages in **French**, **English**, **Arabic**, and **Hausa**. The chatbot stores all messages in the user's browser using **IndexedDB** and provides options to copy, share, download, and listen to AI-generated responses.
 
